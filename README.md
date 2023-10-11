@@ -1,0 +1,2 @@
+# AGHJavascriptCourse
+ Basic Javascript Tasks
