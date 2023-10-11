@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Page title</title>
+    <script>
+      "use strict"; // Don't turn off strict mode
+      var canvas = document.getElementById("canvas");
+      ctx = canvas.getContext("2d");
+      ctx.fillText("Hello World", 10, 50); //Plotting the given text on the canvas
+    </script>
+  </head>
+  <body>
+    <main>
+      <h1>Canvas</h1>
+      <canvas
+        id="canvas"
+        width="500"
+        height="500"
+        style="border: 1px solid #000000"
+      >
+        It looks like your browser doesn't support the "canvas" element
+      </canvas>
+    </main>
+  </body>
+</html>
+<! here is the corrected code>
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Page title</title>
+    <script>
+      "use strict"; // Don't turn off strict mode
+      var canvas = document.getElementById("canvas");
+      var ctx = canvas.getContext("2d"); // Declare ctx using the var keyword
+      ctx.fillText("Hello World", 10, 50); // Plotting the given text on the canvas
+    </script>
+  </head>
+  <body>
+    <main>
+      <h1>Canvas</h1>
+      <canvas
+        id="canvas"
+        width="500"
+        height="500"
+        style="border: 1px solid #000000"
+      >
+        It looks like your browser doesn't support the "canvas" element
+      </canvas>
+    </main>
+  </body>
+</html>
