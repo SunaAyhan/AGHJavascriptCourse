@@ -1,0 +1,59 @@
+
+//- for app2.js
+
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title Student List
+    style.
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+  body
+    main
+      h1 Student List
+      table
+        thead
+          tr
+            th First Name
+            th Last Name
+        tbody
+          each student in students
+            tr
+              td= student.fname
+              td= student.lname
+
+
+
+              //- for app3.js
+      
+doctype html
+html
+  head
+    title Student Information
+  body
+    h1 Student Information
+ 
+    table
+      tr
+        th Name
+        th Surname
+        th Department
+      each student in students
+        tr
+          td= student.name
+          td= student.surname
+          td= student.department
+
+

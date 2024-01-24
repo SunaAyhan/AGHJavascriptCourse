@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animation</title>
+  </head>
+  <body>
+    <form onsubmit="event.preventDefault();">
+      <h2>requestAnimationFrame()</h2>
+      <label for="counter">Counter→</label>
+      <output id="counter" style="font-size: 4vh; color: red">0</output>
+      <br />
+      <button id="start" onclick="startAnimation()">Start</button>
+      <button id="stop" disabled onclick="stopAnimation()">Stop</button>
+
+      <hr />
+
+      <h2>Time-consuming calculations — version 2</h2>
+      <label for="result_worker">Result:</label>
+      <output id="result_worker">0</output>
+      <br />
+      <label for="iterations_worker">Number of iterations:</label>
+      <input id="iterations_worker" type="text" value="50" />
+      <button onclick="void(0)">Run calculations</button>
+    </form>
+    <script src="index.js"></script>
+    <script>
+      var animation;
+      var i = 0;
+      var worker;
+      function startWorkerCalculation() {
+        const iterationsWorker =
+          document.forms[0].iterations_worker.value || 50;
+        document.forms[0].result_worker.value = "Calculating...";
+
+        // Create a new web worker.
+        worker = new Worker("index.js");
+
+        // Send the number of iterations to the worker.
+        worker.postMessage({ iterations: iterationsWorker });
+
+        // Handle the result from the worker.
+        worker.onmessage = function (e) {
+          document.forms[0].result_worker.value = "Done";
+          worker.terminate();
+        };
+
+        // Start the worker's calculation.
+        worker.postMessage("start");
+      }
+
+      function startAnimation() {
+        document.forms[0].start.disabled = true;
+        document.forms[0].stop.disabled = false;
+        animation = window.requestAnimationFrame(step);
+      }
+
+      function step() {
+        document.forms[0].counter.value = i++;
+        animation = window.requestAnimationFrame(step);
+      }
+
+      function stopAnimation() {
+        document.forms[0].start.disabled = false;
+        document.forms[0].stop.disabled = true;
+        window.cancelAnimationFrame(animation);
+      }
+    </script>
+  </body>
+</html>

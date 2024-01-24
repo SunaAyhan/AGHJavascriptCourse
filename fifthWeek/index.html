@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>USOS System</title>
+  </head>
+  <body>
+    <h1>USOS System</h1>
+
+    <form>
+      <label for="studentName">Student Name:</label>
+      <input type="text" id="studentName" placeholder="Student Name" />
+
+      <label for="subjectName">Subject Name:</label>
+      <input type="text" id="subjectName" placeholder="Subject Name" />
+
+      <label for="grade">Grade:</label>
+      <input type="text" id="grade" placeholder="Grade" />
+
+      <button id="addGradeButton">Add a New Grade</button>
+      
+    </form>
+
+    <div id="output"></div>
+
+    <script>
+      document.getElementById('addGradeButton').addEventListener('click', () => {
+        const studentName = document.getElementById('studentName').value;
+        const subjectName = document.getElementById('subjectName').value;
+        const grade = document.getElementById('grade').value;
+
+        // Send a GET request to add a grade
+        fetch(`/addGrade?studentName=${studentName}&subjectName=${subjectName}&grade=${grade}`)
+          .then(response => response.text())
+          .then(message => {
+            document.getElementById('output').innerText = message;
+          });
+      });
+
+      document.getElementById('viewGradesButton').addEventListener('click', () => {
+        const studentName = document.getElementById('studentName').value;
+
+        // Send a GET request to view grades
+        fetch(`/viewGrades?studentName=${studentName}`)
+          .then(response => response.json())
+          .then(data => {
+            const outputDiv = document.getElementById('output');
+            outputDiv.innerHTML = 'Grades for ' + studentName + ':\n';
+            data.forEach(entry => {
+              outputDiv.innerHTML += `Subject: ${entry.subjectName}, Grade: ${entry.grade}\n`;
+            });
+          });
+      });
+    </script>
+  </body>
+</html>

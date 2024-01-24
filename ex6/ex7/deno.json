@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "start": {
+      "cmd": "deno run --unstable --allow-net --allow-read app.ts",
+      "desc": "Run the application"
+    }
+  },
+  "watch": true
+}

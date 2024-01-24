@@ -1,0 +1,27 @@
+[
+  {
+    "studentName": "suna",
+    "subjectName": "ayhan",
+    "grade": "100"
+  },
+  {
+    "studentName": "suna",
+    "subjectName": "math",
+    "grade": "100"
+  },
+  {
+    "studentName": "asd",
+    "subjectName": "ASD",
+    "grade": "243"
+  },
+  {
+    "studentName": "suna",
+    "subjectName": "math",
+    "grade": "123"
+  },
+  {
+    "studentName": "suna ayhan",
+    "subjectName": "math",
+    "grade": "100"
+  }
+]

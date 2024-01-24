@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Students</title>
+</head>
+<body>
+    <h1>Student List</h1>
+    <table>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+        </tr>
+        <% students.forEach(function(student) { %>
+            <tr>
+                <td><%= student.fname %></td>
+                <td><%= student.lname %></td>
+            </tr>
+        <% }); %>
+    </table>
+</body>
+</html>

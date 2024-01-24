@@ -1,53 +1,43 @@
 <!DOCTYPE html>
 <html lang="pl">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <title>Page title</title>
+  </head>
+  <body>
+    <main>
+      <h1>Canvas</h1>
+      <canvas id="canvas" width="500" height="500" style="border:1px solid #000000;">
+      It looks like your browser doesn't support the "canvas" element
+      </canvas>
+    </main>
     <script>
       "use strict"; // Don't turn off strict mode
-      var canvas = document.getElementById("canvas");
-      ctx = canvas.getContext("2d");
+      var canvas = document.getElementById('canvas');
+      var ctx = canvas.getContext('2d'); //Getting the context of the canvas
       ctx.fillText("Hello World", 10, 50); //Plotting the given text on the canvas
+      
+      // Draw the face
+      ctx.beginPath();
+      ctx.arc(250, 250, 200, 0, 2 * Math.PI);
+      ctx.stroke();
+      
+      // Draw the eyes
+      ctx.fillStyle = "black";
+      ctx.fillRect(150, 150, 50, 50);
+      ctx.fillRect(300, 150, 50, 50);
+      
+      // Draw the nose
+      ctx.beginPath();
+      ctx.moveTo(250, 250);
+      ctx.lineTo(250, 350);
+      ctx.lineTo(300, 300);
+      ctx.closePath();
+      ctx.stroke();
+      
+      // Draw the mouth
+      ctx.fillStyle = "red";
+      ctx.fillRect(200, 400, 100, 20);
     </script>
-  </head>
-  <body>
-    <main>
-      <h1>Canvas</h1>
-      <canvas
-        id="canvas"
-        width="500"
-        height="500"
-        style="border: 1px solid #000000"
-      >
-        It looks like your browser doesn't support the "canvas" element
-      </canvas>
-    </main>
-  </body>
-</html>
-<! here is the corrected code>
-<!DOCTYPE html>
-<html lang="pl">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Page title</title>
-    <script>
-      "use strict"; // Don't turn off strict mode
-      var canvas = document.getElementById("canvas");
-      var ctx = canvas.getContext("2d"); // Declare ctx using the var keyword
-      ctx.fillText("Hello World", 10, 50); // Plotting the given text on the canvas
-    </script>
-  </head>
-  <body>
-    <main>
-      <h1>Canvas</h1>
-      <canvas
-        id="canvas"
-        width="500"
-        height="500"
-        style="border: 1px solid #000000"
-      >
-        It looks like your browser doesn't support the "canvas" element
-      </canvas>
-    </main>
-  </body>
-</html>
+  </body></html>
+

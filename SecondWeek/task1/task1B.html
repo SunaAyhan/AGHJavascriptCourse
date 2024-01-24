@@ -1,25 +1,22 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <script src="task1.js"></script>
-  </head>
-  <body>
-    <form>
-      <input id="text_field" placeholder="Enter text" type="text" />
-      +
-      <input id="number_field" type="number" placeholder="Enter number" />
-      =
-      <output name="result" for="text_field number_field"
-        >The calculation result will appear here</output
-      >
-      <br />
-      <input
-        id="printButton"
-        type="button"
-        value="Print"
-        onclick="printFormValues()"
-      />
-    </form>
+  <body onLoad="
+            console.log('Text 1');
+            window.alert('Text 2');
+            // document.write('Text 3'); // this will overwrite the whole document with the text so the rest of the content is not visible
+          ">
+          
     <div>The content of the HTML document</div>
+    <div>The content of the HTML document</div>
+    <div>The content of the HTML document</div>
+    <form oninput="result.value = text_field.value + text_field.value">
+      <input id="text_field" placeholder="Enter text" type="text">
+      +
+      <input id="number_field" type="number" placeholder="Enter number">    
+      =
+      <output name="result" for="text_field number_field">The calculation result will appear here</output>    
+      <br>    
+      <input type="button" value="Print" onclick="printValues()">
+    </form>
+    <script src="task1.js"></script>
   </body>
 </html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <button id="deleteButton">Delete</button>
+  <button id="setButton">Set</button>
+  <head>
+    <meta
+      charset="UTF-8"
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <!-- Page title -->
+
+    <title>Page title</title>
+  </head>
+  <body>
+    <!-- 
+    ***********
+    Beginning of fixed text content
+    ***********
+  -->
+
+    <header>
+      <!-- Page title -->
+      <!-- Background color: #EFF -->
+      <!-- Border color: #A8A8A8 -->
+
+      <h1>Page title</h1>
+    </header>
+
+    <nav>
+      <!-- Here the navigation menu -->
+      <!-- left & right margin: 25px -->
+
+      <ul>
+        <li>
+          <a href="">Element 1</a>
+        </li>
+
+        <li>
+          <a href="">Element 2</a>
+        </li>
+      </ul>
+    </nav>
+    <!-- Here the content of the side panel-->
+
+    <aside>
+      <h1>Side panel</h1>
+
+      <h2>Interesting links</h2>
+
+      <ul>
+        <li>
+          <a href="">Link 1</a>
+        </li>
+
+        <li>
+          <a href="">Link 2</a>
+        </li>
+
+        <li>
+          <a href="">Link 3</a>
+        </li>
+      </ul>
+    </aside>
+
+    <main>
+      <!-- Here the content of the page -->
+
+      <h1 class="page">Page content</h1>
+
+      <blockquote
+        cite="http://www.english-for-students.com/The-Road-Not-Taken.html"
+      >
+        <pre>
+      
+      Two roads diverged in a yellow wood,
+      And sorry I could not travel both
+      And be one traveller, long I stood
+      And looked down one as far as I could
+      To where it bent in the undergrowth;
+
+      Then took the other, as just as fair,
+      And having perhaps the better claim,
+      Because it was grassy and wanted wear;
+      Though as for that the passing there
+      Had worn them really about the same,
+
+      And both that morning equally lay
+      In leaves no step had trodden black.
+      Oh, I kept the first for another day!
+      Yet knowing how way leads on to way,
+      I doubted if I should ever come back.
+
+      I shall be telling this with a sigh
+      Somewhere ages and ages hence:
+      Two roads diverged in a wood, and I
+      I took the one less travelled by,
+      And that has made all the difference.
+        </pre>
+        <footer>By Frost</footer>
+      </blockquote>
+    </main>
+
+    <footer>
+      <!-- Here the content of the footer -->
+      <a href="mailto:sunaayhan16@gmail.com">Suna Ayhan</a>
+    </footer>
+    <script>
+      document
+        .getElementById("setButton")
+        .addEventListener("click", function () {
+          // Apply inline styles to set appearance
+
+          document.body.style.padding = "10px";
+
+          var header = document.querySelector("header");
+          header.style.backgroundColor = "#EFF";
+          header.style.border = "5px solid #A8A8A8";
+          header.style.textAlign = "center";
+          header.style.margin = "0px";
+
+          var nav = document.querySelector("nav");
+          nav.style.marginLeft = "25px";
+          nav.style.marginRight = "25px";
+          nav.style.marginTop = "0rem";
+          nav.style.marginBottom = "0rem";
+          var ul = document.querySelector("ul");
+          ul.style.marginLeft = "25px";
+          ul.style.marginRight = "25px";
+          ul.style.textAlign = "center";
+
+          ul.style.border = "3px solid black";
+          ul.style.padding = "1rem";
+
+          var aside = document.querySelector("aside");
+          aside.style.backgroundColor = "#EFF";
+          aside.style.border = " 2px solid #A8A8A8";
+          aside.style.float = "right";
+          aside.style.listStylePosition = "inside";
+          aside.style.marginRight = "5px";
+          aside.style.padding = "1rem";
+          aside.style.width = "40%";
+          aside.style.marginTop = "0rem";
+          aside.style.fontSize = "32px";
+
+          var main = document.querySelector("main");
+          main.style.backgroundColor = "#EFF";
+          main.style.textAlign = "center";
+          main.style.border = "2px solid grey";
+          main.style.display = "inline-block";
+          main.style.marginLeft = "5px";
+          main.style.marginTop = "0rem";
+          main.style.padding = "1rem";
+
+          var pageContent = document.querySelector(".page");
+          pageContent.style.backgroundColor = "#EFF";
+
+          var blockquote = document.querySelector("blockquote");
+          blockquote.style.backgroundColor = "#EFF";
+          blockquote.style.border = " 1px solid #A8A8A8";
+
+          var footer = document.querySelector("footer");
+          footer.style.backgroundColor = "#EFF";
+          footer.style.border = " 3px solid black";
+          footer.style.textAlign = "center";
+          footer.style.marginLeft = "5px";
+          footer.style.marginRight = "5px";
+
+          var aTags = document.querySelectorAll("a");
+          aTags.forEach(function (a) {
+            a.style.color = "blue";
+          });
+        });
+
+      document
+        .getElementById("deleteButton")
+        .addEventListener("click", function () {
+          // Reset inline styles to the initial state
+          document.body.style.backgroundColor = "";
+
+          var header = document.querySelector("header");
+          header.style.backgroundColor = "";
+          header.style.border = "";
+          header.style.textAlign = "";
+          header.style.margin = "";
+
+          var nav = document.querySelector("nav");
+          nav.style.marginLeft = "";
+          nav.style.marginRight = "";
+
+          var ul = document.querySelector("ul");
+          ul.style.marginLeft = "";
+          ul.style.marginRight = "";
+          ul.style.textAlign = "";
+          ul.style.border = "";
+          ul.style.padding = "";
+
+          var aside = document.querySelector("aside");
+          aside.style.backgroundColor = "";
+          aside.style.border = "";
+          aside.style.float = "";
+          aside.style.listStylePosition = "";
+          aside.style.marginRight = "";
+          aside.style.padding = "";
+          aside.style.width = "";
+          aside.style.marginTop = "";
+          aside.style.fontSize = "";
+
+          var main = document.querySelector("main");
+          main.style.backgroundColor = "";
+          main.style.textAlign = "";
+          main.style.border = "";
+          main.style.display = "";
+          main.style.marginLeft = "";
+          main.style.marginTop = "";
+          main.style.padding = "";
+
+          var pageContent = document.querySelector(".page");
+          pageContent.style.backgroundColor = "";
+
+          var blockquote = document.querySelector("blockquote");
+          blockquote.style.backgroundColor = "";
+          blockquote.style.border = "";
+
+          var footer = document.querySelector("footer");
+          footer.style.backgroundColor = "";
+          footer.style.border = "";
+          footer.style.textAlign = "";
+          footer.style.marginLeft = "";
+          footer.style.marginRight = "";
+
+          var aTags = document.querySelectorAll("a");
+          aTags.forEach(function (a) {
+            a.style.color = "";
+          });
+        });
+    </script>
+
+    <!-- 
+    *********
+    End of fixed text content 
+    *********
+  --></body>
+</html>
